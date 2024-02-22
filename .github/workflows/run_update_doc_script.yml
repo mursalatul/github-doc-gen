@@ -3,7 +3,7 @@ name: Update Documentation
 on:
   push:
     branches:
-      - master  # Update this branch name if needed
+      - main  # Update this branch name if needed
 
 jobs:
   update_docs:
