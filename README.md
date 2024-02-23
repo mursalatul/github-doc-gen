@@ -61,10 +61,13 @@ jobs:
         git commit -m "auto update documentation & api"
         git push
 ```
-
 5. go to `settings` -> `Action` -> `General` and sroll down. In the workflow permission section, select `Read and write permissions` and click save.
+<hr>
 
-Go to the root of the repository and see the changes. 
+Go to the Action section. If everything is ok you can something like this,
+
+![image](https://github.com/mursalatul/github-doc-gen/assets/79168756/62e8f4d8-46d4-4427-986f-337e2e19715f)
+
 
 $${\color{red}If \space you \space can't \space see \space any \space changes, \space it \space means \space your \space action \space did \space not \space run. \space Make \space sure \space your \space branch \space name \space matches \space the \space one \space indicated \space in \space the \space YAML \space file, \space specifically \space on \space the \space 6th \space line.}$$
 
@@ -80,3 +83,12 @@ Modify the following attributes according to your need.
 - **ignore** : this is a list of folders/files which wont be added to documentation. Default = ['.github', '.git', 'UPDATE_DOC.py', 'UPDATE_DOC_DATA.py', 'LICENSE', 'virtual_env', '__pycache__', 'DOCUMENTATION.md', 'README.md', 'run_doc_gen_script.yml']
 - **path** : path of your github repository. Default = "https://github.com/mursalatul/github-doc-gen/"
 
+
+### Topics
+
+- Python
+- Python Automation
+- GitHub Repository Automation
+- GitHub Actions
+
+[![Topics](https://img.shields.io/badge/Topics-Python%20%7C%20Automation%20%7C%20GitHub-brightgreen)](https://github.com/mursalatul/github-doc-gen/)
