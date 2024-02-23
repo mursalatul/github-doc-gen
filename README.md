@@ -1,20 +1,19 @@
 # github-doc-gen
 
-Github documentation generator is a automation tool for github repository to create and update
-documentation whenever you add a file in your repository.
+GitHub documentation generator is an automation tool for GitHub repositories that creates and updates documentation whenever you add a file to your repository.
 
-When you will add something in your repository <b>UPDATE_DOC.py</b> will be executed by the <b>run_doc_updater_script.yml</b> and new content file will be visible to your <b>DOCUMENTATION.md</b> file by default.
+When you add something to your repository, `UPDATE_DOC.py` will be executed by `run_update_doc_script.yml`, and the new content file will be automatically visible in your `DOCUMENTATION.md` file by default.
 
 
 ## Usage
 
-1. Place the <b>UPDATE_DOC.py</b> and <b>UPDATE_DOC_DATE.py</b> in the root of the repository.
+1. Place the `<b>UPDATE_DOC.py</b>` and `<b>UPDATE_DOC_DATE.py</b>` files in the root of the repository.
 
-2. Create an github workflow and put the source code of run_update_doc_script.yml.
+2. Create a GitHub workflow and place the source code of `run_update_doc_script.yml` within it.
 
-3. Open <b>UPDATE_DOC_DATE.py</b> and modify according to your need.
+3. Dont forget to modify `UPDATE_DOC_DATE.py` according to your needs.
 
-you are done.
+you are done ✅.
 
 ## Create github workflow
 
@@ -63,10 +62,21 @@ jobs:
         git push
 ```
 
-5. go to settings -> Action -> General and sroll down. In the workflow permission section, select Read and write permissions and click save.
+5. go to `settings` -> `Action` -> `General` and sroll down. In the workflow permission section, select `Read and write permissions` and click save.
 
 Go to the root of the repository and see the changes. 
 
-If you cant see any changes it means your action did not run. Make sure your branch name and
+$${\color{red}If \space you \space can't \space see \space any \space changes, \space it \space means \space your \space action \space did \space not \space run. \space Make \space sure \space your \space branch \space name \space matches \space the \space one \space indicated \space in \space the \space YAML \space file, \space specifically \space on \space the \space 6th \space line.}$$
 
-in the yml file, in the 6th line, indicated branch name is same.
+## UPDATE_DOC_DATA.py Properties
+
+Modify the following attributes according to your need.
+
+- **title** : title of the documentation. Default = "Documentation"
+- **sub_title** : create the sub title for the documentation. Default = "Content"
+- **text** : this is the intro text, it will be showen under the title.
+- **show_file** : if this is true, files in the repository will be showen in the documentation. Default = True
+- **show_folder** : if this is true, folders in the repository will be showen in the documentation. Default = True
+- **ignore** : this is a list of folders/files which wont be added to documentation. Default = ['.github', '.git', 'UPDATE_DOC.py', 'UPDATE_DOC_DATA.py', 'LICENSE', 'virtual_env', '__pycache__', 'DOCUMENTATION.md', 'README.md', 'run_doc_gen_script.yml']
+- **path** : path of your github repository. Default = "https://github.com/mursalatul/github-doc-gen/"
+
