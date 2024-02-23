@@ -1,3 +1,4 @@
+![github-doc-gen~2](https://github.com/mursalatul/github-doc-gen/assets/79168756/68b11f2d-644e-49e1-8d45-1e118b7cf602)
 # github-doc-gen
 
 GitHub documentation generator is an automation tool for GitHub repositories that creates and updates documentation whenever you add a file to your repository.
