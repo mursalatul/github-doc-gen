@@ -3,7 +3,7 @@ from UPDATE_DOC_DATA import content
 
 class CreateDocumentation:
     def writedoc(self, folder_file: list):
-        
+        # writing the datas to doc
         with open("DOCUMENTATION.md", "w") as doc:
             doc.write(f"# {content['title']}\n\
 {content["text"]}\n\n")
@@ -20,26 +20,28 @@ class CreateDocumentation:
                 
 
 class Files:
-    def get_all_valid_folder_files_dict(self, data_location):
+    def get_all_valid_folder_files_dict(self):
         all_files = []
-        cwd = data_location
-
+        # getting repository location
+        cwd = os.getcwd()
         for f in os.listdir(cwd):
+            # check if the file/dir is in ignore section or not.
+            # ignore files wont be counted
             if f not in content['ignore']:
-                all_files.append(f)
-
+                # append if it is a file and show_file=True
+                if content['show_file'] and os.path.isfile(f):
+                    all_files.append(f)
+                # append if it is a folder and show_folder=True
+                elif content['show_folder'] and os.path.isdir(f):
+                    all_files.append(f)
         # return (all_files)
         return all_files
 
 
 def main():
-    # getting repository location
-    cwd = os.getcwd()
-
     # getting file data
     ff = Files()
-    data = (ff.get_all_valid_folder_files_dict(cwd))
-    # print(data)
+    data = ff.get_all_valid_folder_files_dict()
 
     # writing to Documentation.md
     doc = CreateDocumentation()
