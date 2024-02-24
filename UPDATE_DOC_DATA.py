@@ -1,6 +1,6 @@
 # change the following data according to your need
 content = {
-    'title' : "title of documentation",
+    'title' : "documentation title",
     'sub_title': "Content",
     'text' : 'this is a usual text to show after title or sub title',
     'show_file' : True,
