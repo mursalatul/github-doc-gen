@@ -26,11 +26,14 @@ jobs:
     - name: Run UPDATE_DOC.py
       run: python UPDATE_DOC.py
 
+    # removing __pycache__ as it is autogenerate by python after running the above python code.
+    - name: Clean __pycache__
+      run: rm -rf __pycache__
+
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "auto update documentation & api"
+        git commit -m "auto update documentation"
         git push
-        
