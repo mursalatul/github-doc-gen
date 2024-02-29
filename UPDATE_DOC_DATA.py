@@ -8,3 +8,7 @@ content = {
     'ignore' : ['.github', '.git', 'UPDATE_DOC.py', 'UPDATE_DOC_DATA.py', 'LICENSE', 'virtual_env', '__pycache__', 'DOCUMENTATION.md', 'README.md', 'run_doc_gen_script.yml'],
     'path' : "https://github.com/mursalatul/github-doc-gen/"
 }
+
+git_info = {
+    'root_branch' : 'main', # your root branch
+}
