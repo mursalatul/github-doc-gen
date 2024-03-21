@@ -1,7 +1,10 @@
 const { spawn } = require('child_process');
+const path = require('path');
 
 // Run a Python script and return output
-function runPythonScript(scriptPath) {
+function runPythonScript(scriptName) {
+  // Construct the full path to the Python script
+  const scriptPath = path.resolve(__dirname, scriptName);
 
   // Use child_process.spawn method from 
   // child_process module and assign it to variable
