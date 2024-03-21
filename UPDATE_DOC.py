@@ -6,7 +6,7 @@ class CreateDocumentation:
         # writing the datas to doc
         with open("DOCUMENTATION.md", "w") as doc:
             doc.write(f"# {content['title']}\n\
-{content['text']}\n\n")
+{content["text"]}\n\n")
 
             doc.write(f"## {content['sub_title']}\n")
 
@@ -54,7 +54,7 @@ def check_yml():
 
         # if is is already the setted branch then not need to change.
         # 6th line contains branch name
-        all_data_in_yml[5] = f'      - {git_info["root_branch"]}\n' if all_data_in_yml[5].strip() != f'- {git_info["root_branch"]}' else all_data_in_yml[5]
+        all_data_in_yml[5] = f'      - {git_info['root_branch']}\n' if all_data_in_yml[5].strip() != f'- {git_info['root_branch']}' else all_data_in_yml[5]
 
     # writing changes(if branch name changed)
     with open('.github/workflows/run_update_doc_script.yml', 'w') as yml:
@@ -63,7 +63,7 @@ def check_yml():
 
 def main():
     # check if run_update_doc_script.yml has the currect root branch name or not
-    # check_yml()
+    check_yml()
     # getting file data
     ff = Files()
     data = ff.get_all_valid_folder_files_dict()
