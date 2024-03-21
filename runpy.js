@@ -1,11 +1,11 @@
 const { spawn } = require('child_process');
 
 // Run a Python script and return output
-function runPythonScript(scriptPath, args) {
+function runPythonScript(scriptPath) {
 
   // Use child_process.spawn method from 
   // child_process module and assign it to variable
-  const pyProg = spawn('python', [scriptPath].concat(args));
+  const pyProg = spawn('python', [scriptPath]);
 
   // Collect data from script and print to console
   let data = '';
@@ -26,4 +26,4 @@ function runPythonScript(scriptPath, args) {
 }
 
 // Run the Python file
-runPythonScript('UPDATE_DOC.py', [arg1, arg2]);
+runPythonScript('UPDATE_DOC.py');
