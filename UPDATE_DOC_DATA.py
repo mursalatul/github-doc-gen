@@ -10,5 +10,5 @@ content = {
 }
 
 git_info = {
-    'root_branch' : 'main', # your root branch
+    'root_branch' : 'master', # your root branch
 }
