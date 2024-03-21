@@ -1,33 +1,53 @@
+# name: Set up Python
+# uses: actions/setup-python@v3
+# with:
+#   python-version: 3.12.1
+
+# # - name: Install dependencies
+# #   run: |
+# #     python -m pip install --upgrade pip
+# #     pip install -r REQUIREMENTS.txt
+
+# runs:
+#   using: 'node12'
+#   main: |
+#     node $GITHUB_WORKSPACE/runpy.js
+#     rm -rf __pycache__
+#     git config --local user.email "action@github.com"
+#     git config --local user.name "GitHub Action"
+#     git add .
+#     git commit -m "auto update documentation"
+#     git push
+
+# # runs:
+# #   using: "node16"
+# #   main: "runpy.js"
+
+# # run: |
+# #   rm -rf __pycache__
+# #   git config --local user.email "action@github.com"
+# #   git config --local user.name "GitHub Action"
+# #   git add .
+# #   git commit -m "auto update documentation"
+# #   git push
+# #   echo "Git commands executed successfully."
+
 name: Set up Python
 uses: actions/setup-python@v3
 with:
   python-version: 3.12.1
 
-# - name: Install dependencies
-#   run: |
-#     python -m pip install --upgrade pip
-#     pip install -r REQUIREMENTS.txt
-
 runs:
-  using: 'node12'
-  main: |
-    node $GITHUB_WORKSPACE/runpy.js
-    rm -rf __pycache__
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    git add .
-    git commit -m "auto update documentation"
-    git push
+  using: "node16"
+  main: "runpy.js"
 
-# runs:
-#   using: "node16"
-#   main: "runpy.js"
+# Additional steps to run after executing runpy.js
+steps:
+  - name: Run Git commands
+    run: |
+      git config --local user.email "action@github.com"
+      git config --local user.name "GitHub Action"
+      git add .
+      git commit -m "auto update documentation"
+      git push
 
-# run: |
-#   rm -rf __pycache__
-#   git config --local user.email "action@github.com"
-#   git config --local user.name "GitHub Action"
-#   git add .
-#   git commit -m "auto update documentation"
-#   git push
-#   echo "Git commands executed successfully."
