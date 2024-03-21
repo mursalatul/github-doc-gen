@@ -11,7 +11,7 @@ with:
 runs:
   using: 'node12'
   main: |
-    node runpy.js
+    node $GITHUB_WORKSPACE/runpy.js
     rm -rf __pycache__
     git config --local user.email "action@github.com"
     git config --local user.name "GitHub Action"
