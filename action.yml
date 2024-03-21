@@ -14,10 +14,10 @@ runs:
 # python --version
 # python -m pip install --upgrade pip
 # python -m pip install -r REQUIREMENTS.txt
-    python UPDATE_DOC.py
-    rm -rf __pycache__
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    git add .
-    git commit -m "auto update documentation"
-    git push
+  python UPDATE_DOC.py
+  rm -rf __pycache__
+  git config --local user.email "action@github.com"
+  git config --local user.name "GitHub Action"
+  git add .
+  git commit -m "auto update documentation"
+  git push
