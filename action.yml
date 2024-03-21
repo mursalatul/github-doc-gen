@@ -7,7 +7,7 @@ with:
 #   run: |
 #     python -m pip install --upgrade pip
 #     pip install -r REQUIREMENTS.txt
-run: |
+runs: |
   python UPDATE_DOC.py
   rm -rf __pycache__
   git config --local user.email "action@github.com"
