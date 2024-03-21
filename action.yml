@@ -1,7 +1,7 @@
 name: Set up Python
 uses: actions/setup-python@v3
 with:
-    python-version: 3.12.1
+  python-version: 3.12.1
 
 # - name: Install dependencies
 #   run: |
@@ -9,14 +9,15 @@ with:
 #     pip install -r REQUIREMENTS.txt
 
 runs:
-  using: "python3"
-  main: "UPDATE_DOC.py"
-
-run: |
-  python UPDATE_DOC.py
-  rm -rf __pycache__
-  git config --local user.email "action@github.com"
-  git config --local user.name "GitHub Action"
-  git add .
-  git commit -m "auto update documentation"
-  git push
+  using: 'node12'
+  main: |
+    python --version
+    python -m pip install --upgrade pip
+    python -m pip install -r REQUIREMENTS.txt
+    python UPDATE_DOC.py
+    rm -rf __pycache__
+    git config --local user.email "action@github.com"
+    git config --local user.name "GitHub Action"
+    git add .
+    git commit -m "auto update documentation"
+    git push
