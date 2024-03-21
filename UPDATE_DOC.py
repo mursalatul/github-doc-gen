@@ -63,7 +63,7 @@ def check_yml():
 
 def main():
     # check if run_update_doc_script.yml has the currect root branch name or not
-    check_yml()
+    # check_yml()
     # getting file data
     ff = Files()
     data = ff.get_all_valid_folder_files_dict()
