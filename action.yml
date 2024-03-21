@@ -1,19 +1,5 @@
-name: Update Documentation.md
 
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  update_docs:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python
+name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.12.1
@@ -23,17 +9,22 @@ jobs:
     #     python -m pip install --upgrade pip
     #     pip install -r REQUIREMENTS.txt
 
-    - name: Run UPDATE_DOC.py
+name: Run UPDATE_DOC.py
       run: python UPDATE_DOC.py
 
     # removing __pycache__ as it is autogenerate by python after running the above python code.
-    - name: Clean __pycache__
+name: Clean __pycache__
       run: rm -rf __pycache__
 
-    - name: Commit and push changes
+name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "auto update documentation"
         git push
+
+runs:
+      using: 'composite'
+      steps:
+        - run: echo "The job is now running."
