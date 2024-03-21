@@ -8,13 +8,17 @@ with:
 #     python -m pip install --upgrade pip
 #     pip install -r REQUIREMENTS.txt
 
+# runs:
+#   using: 'node12'
+#   main: |
+#     python UPDATE_DOC.py
+#     rm -rf __pycache__
+#     git config --local user.email "action@github.com"
+#     git config --local user.name "GitHub Action"
+#     git add .
+#     git commit -m "auto update documentation"
+#     git push
+
 runs:
-  using: 'node12'
-  main: |
-    python UPDATE_DOC.py
-    rm -rf __pycache__
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    git add .
-    git commit -m "auto update documentation"
-    git push
+  using: "node16"
+  main: "runpy.js"
