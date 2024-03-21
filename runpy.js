@@ -58,4 +58,4 @@ function executeCommands() {
 runPythonScript('UPDATE_DOC.py');
 
 // Call the function to execute the commands
-executeCommands();
+// executeCommands();
