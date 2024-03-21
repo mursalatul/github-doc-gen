@@ -28,5 +28,34 @@ function runPythonScript(scriptName) {
   });
 }
 
+
+function executeCommands() {
+  try {
+    // Remove __pycache__
+    execSync('rm -rf __pycache__');
+    
+    // Configure git user
+    execSync('git config --local user.email "action@github.com"');
+    execSync('git config --local user.name "GitHub Action"');
+    
+    // Add changes to git
+    execSync('git add .');
+    
+    // Commit changes
+    execSync('git commit -m "auto update documentation"');
+    
+    // Push changes
+    execSync('git push');
+    
+    console.log('Commands executed successfully.');
+  } catch (error) {
+    console.error('Error executing commands:', error.message);
+  }
+}
+
+
 // Run the Python file
 runPythonScript('UPDATE_DOC.py');
+
+// Call the function to execute the commands
+executeCommands();
