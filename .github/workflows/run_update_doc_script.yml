@@ -3,7 +3,7 @@ name: Update Documentation.md
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   update_docs:
