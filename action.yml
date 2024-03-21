@@ -11,9 +11,9 @@ with:
 runs:
   using: 'node12'
   main: |
-    python --version
-    python -m pip install --upgrade pip
-    python -m pip install -r REQUIREMENTS.txt
+# python --version
+# python -m pip install --upgrade pip
+# python -m pip install -r REQUIREMENTS.txt
     python UPDATE_DOC.py
     rm -rf __pycache__
     git config --local user.email "action@github.com"
