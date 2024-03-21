@@ -40,14 +40,20 @@ with:
 runs:
   using: "node16"
   main: "runpy.js"
+  run: |
+    git config --local user.email "action@github.com"
+    git config --local user.name "GitHub Action"
+    git add .
+    git commit -m "auto update documentation"
+    git push
 
 # Additional steps to run after executing runpy.js
-steps:
-  - name: Run Git commands
-    run: |
-      git config --local user.email "action@github.com"
-      git config --local user.name "GitHub Action"
-      git add .
-      git commit -m "auto update documentation"
-      git push
+# steps:
+#   - name: Run Git commands
+#     run: |
+#       git config --local user.email "action@github.com"
+#       git config --local user.name "GitHub Action"
+#       git add .
+#       git commit -m "auto update documentation"
+#       git push
 
