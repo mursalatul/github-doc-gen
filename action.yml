@@ -3,14 +3,14 @@ uses: actions/setup-python@v3
 with:
   python-version: 3.12.1
 
-- name: Run UPDATE_DOC.py
-  run: python UPDATE_DOC.py
+name: Run UPDATE_DOC.py
+run: python UPDATE_DOC.py
 
-- name: Clean __pycache__
-  run: rm -rf __pycache__
+name: Clean __pycache__
+run: rm -rf __pycache__
 
-- name: Commit and push changes
-  run: |
+name: Commit and push changes
+run: |
     git config --local user.email "action@github.com"
     git config --local user.name "GitHub Action"
     git add .
