@@ -14,7 +14,7 @@ When you add something to your repository, `UPDATE_DOC.py` will be executed by `
 
 3. Dont forget to modify `UPDATE_DOC_DATE.py` according to your needs.
 
-you are done ✅.
+you are done ✅
 
 ## Create github workflow
 
